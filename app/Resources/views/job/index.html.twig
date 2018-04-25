@@ -1,0 +1,66 @@
+{%  extends "base.html.twig" %}
+
+{% block menu_job %}
+    class="active"
+{% endblock %}
+
+{% block body_content %}
+    <!-- **********************************************************************************************************************************************************
+                MAIN CONTENT
+                *********************************************************************************************************************************************************** -->
+    <!--main content start-->
+    <section id="main-content">
+        <section class="wrapper">
+
+            <h3><i class="fa fa-angle-right"></i> Gestion des employés</h3>
+            <a class="btn btn-success btn-sm pull-right" href="{{ path('job_add') }}"> Ajouter un métier</a>
+            <div class="row">
+                <div class="col-lg-12 main-chart">
+                    <table class="table table-bordered table-striped table-condensed">
+                        <thead>
+                        <tr>
+                            <th>Dénomination</th>
+                            <th>Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for metier in job %}
+                            <tr>
+                                <td>{{ metier.nomMetier }}</td>
+
+                                <td>
+                                    <a href="{{ path('job_edit', { 'id': metier.id })}}" class="btn btn-primary btn-xs">
+                                        <i class="fa fa-pencil"></i>
+                                    </a>
+                                    <a href="{{ path('job_delete',{ 'id':metier.id })}}" class="btn btn-danger btn-xs">
+                                        <i class="fa fa-trash-o"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-2 col-sm-2 col-md-offset-5">
+                    <div class="pagination">
+                        <a href="#">
+                                <span class="badge bg-default">
+                                    <i class="fa fa-chevron-left"></i>
+                                </span>
+                        </a>
+                        <a href="#"><span class="badge bg-theme">1</span></a>
+                        <a href="#"><span class="badge bg-default">2</a>
+                        <a href="#"><span class="badge bg-default">3</a>
+                        <a href="#"><span class="badge bg-default">4</a>
+                        <a href="#"><span class="badge bg-default">5</a>
+                        <a href="#">
+                                <span class="badge bg-default">
+                                    <i class="fa fa-chevron-right"></i>
+                                </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+{% endblock %}

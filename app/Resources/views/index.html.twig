@@ -1,0 +1,189 @@
+{%  extends "base.html.twig" %}
+
+{% block menu_homepage%}
+class="active"
+{% endblock %}
+
+{% block body_content %}
+    <!-- **********************************************************************************************************************************************************
+    MAIN CONTENT
+    *********************************************************************************************************************************************************** -->
+    <!--main content start-->
+    <section id="main-content">
+        <section class="wrapper">
+{{ dump(tempsProduction) }}
+            <div class="row">
+                <div class="col-lg-9 main-chart">
+
+                    <div class="row mtbox">
+                        <div class="col-md-2 col-sm-2 col-md-offset-2 box0">
+                            <div class="box1">
+                                <span class="li_stack"></span>
+                                <h3>{{ nombreProjetR }}</h3>
+                            </div>
+                            <p>{{ nombreProjetR }} projets en réalisation</p>
+                        </div>
+                        <div class="col-md-2 col-sm-2 box0">
+                            <div class="box1">
+                                <span class="li_cloud"></span>
+                                <h3>{{ nombreProjetL }}</h3>
+                            </div>
+                            <p>{{ nombreProjetL }} projets livrés</p>
+                        </div>
+                        <div class="col-md-2 col-sm-2 box0">
+                            <div class="box1">
+                                <span class="li_user"></span>
+                                <h3>{{ nombreEmployee }}</h3>
+                            </div>
+                            <p>{{ nombreEmployee }} employés enregistrés</p>
+                        </div>
+                        <div class="col-md-2 col-sm-2 box0">
+                            <div class="box1">
+                                <span class="li_heart"></span>
+                                <h3>{{ nombreJour }} </h3>
+                            </div>
+                            <p>{{ nombreJour }} jours de production</p>
+                        </div>
+                    </div>
+                    <!-- /row mt -->
+
+                    <div class="row mt">
+                        <div class="col-md-4 col-sm-4 mb">
+                            <div class="white-panel pn donut-chart">
+                                <div class="white-header">
+                                    <h5>RENTABILITE</h5>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6 col-xs-6 goleft">
+                                        <p>
+                                            <i class="fa fa-database"></i> {{ (nombreProjetCapex/(nombreProjetCapex+nombreProjetOpex)*100)|number_format(2, ',') }}% CAPEX</p>
+                                    </div>
+                                </div>
+                                <canvas id="ratio" height="120" width="120"></canvas>
+                                <script>
+                                    var doughnutData = [{ value: {{ nombreProjetCapex }}, color: "#68dff0" }, { value: {{ nombreProjetOpex }}, color: "#fdfdfd" }];
+                                    var myDoughnut = new Chart(document.getElementById("ratio").getContext("2d")).Doughnut(doughnutData);
+                                </script>
+                            </div>
+                            <!--/grey-panel -->
+                        </div>
+
+                        <div class="col-md-4 col-sm-4 mb">
+                            <div class="white-panel pn donut-chart">
+                                <div class="white-header">
+                                    <h5>TAUX DE LIVRAISON</h5>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6 col-xs-6 goleft">
+                                        <p>
+                                            <i class="fa fa-cloud"></i>{{ (nombreProjetL/(nombreProjetL+nombreProjetR)*100)|number_format(2, ',')}}% LIVRES</p>
+                                    </div>
+                                </div>
+                                <canvas id="ratio2" height="120" width="120"></canvas>
+                                <script>
+                                    var doughnutData = [{ value: {{ nombreProjetL }}, color: "#68dff0" }, { value: {{ nombreProjetR }}, color: "#fdfdfd" }];
+                                    var myDoughnut = new Chart(document.getElementById("ratio2").getContext("2d")).Doughnut(doughnutData);
+                                </script>
+                            </div>
+                            <!--/grey-panel -->
+                        </div>
+
+                        <div class="col-md-4 mb">
+                            <!-- WHITE PANEL - TOP USER -->
+
+                            <div class="white-panel pn">
+                                <div class="white-header">
+                                    <h5>TOP EMPLOYE</h5>
+                                </div>
+                                <p>
+                                    <img src="{{ asset('img/ui-zac.jpg')}}" class="img-circle" width="80">
+                                </p>
+                                <p>
+                                    <b>{{ topEmployee.employee.idEmployee }}</b>
+                                </p>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <p class="small mt">EMPLOYE DEPUIS</p>
+                                        <p>{{ topEmployee.employee.idEmployee.embauche|date('Y') }}</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p class="small mt">TOTAL DEPENSE</p>
+                                        <p>{{ topEmployee.total }} €</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /col-md-4 -->
+
+                    </div>
+                    <!-- /row -->
+
+                    <div class="row">
+                        <div class="col-lg-12 main-chart">
+                            <table class="table table-bordered table-striped table-condensed">
+                                <thead>
+                                <tr>
+                                    <th>Projet</th>
+                                    <th>Type</th>
+                                    <th>Date</th>
+                                    <th>Coût</th>
+                                    <th>Livré ?</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {# %  for projet in listeProject %}
+                                <tr>
+                                    <th>
+                                        <a href="#">{{ projet.projet.titre }}</a>
+                                    </th>
+                                    <th>{{  projet.projet.typeProjet }}</th>
+                                    <th>18/03/2018</th>
+                                    <th>3 200 €</th>
+                                    <th>
+                                        {% if projet.projet.delivery==1 %}
+                                        <span class="label label-success label-mini">OUI</span>
+                                            {% else %}
+                                        <span class="label label-danger label-mini">NON</span>
+                                                {% endif %}
+                                    </th>
+                                </tr>
+                               {% endfor %}#}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- ***********************************************************************************************************************************************
+                            RIGHT SIDEBAR CONTENT
+                            ************************************************************************************************************************************************ -->
+
+                <div class="col-lg-3 ds">
+                    <h3>TEMPS DE PRODUCTION</h3>
+
+                    {% for temps in tempsProduction %}
+                    <div class="desc">
+                        <div class="thumb">
+                                <span class="badge bg-theme">
+                                    <i class="fa fa-clock-o"></i>
+                                </span>
+                        </div>
+                        <div class="details">
+                            <p>
+                                <a href="{{ path('employee_detail', {'id':temps.idEmployee.id}) }}">{{ temps.idEmployee }}</a> a travaillé sur
+                                <a href="{{ path('project_detail', {'id':temps.idProject.id}) }}">{{ temps.idProject }}</a>.
+                                <br/>
+                                <muted>{{ temps.nbJour }} JOUR</muted>
+                            </p>
+                        </div>
+                    </div>
+
+                    {% endfor %}
+
+                </div>
+                <!-- /col-lg-3 -->
+            </div>
+            <!--/row -->
+        </section>
+    </section>
+{% endblock %}

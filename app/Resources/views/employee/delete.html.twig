@@ -1,0 +1,21 @@
+{%  extends "base.html.twig" %}
+
+{% block menu_user %}
+    class="active"
+{% endblock %}
+
+{% block body_content %}
+    <section id="main-content">
+        <section class="wrapper">
+
+            <h3><i class="fa fa-angle-right"></i> Archiver d'un employee</h3>
+            <form action="" method="post">
+                Etes vous sure de vouloir archiver un employée " {{ employee.prenom }} {{ employee.nom | upper }} "?
+                <div class="form-group">
+                    <input type="submit" class="btn btn-danger" name="del" value="Oui">
+                    <input type="submit" class="btn btn-success" name="del" value="Non">
+                </div>
+            </form>
+        </section>
+    </section>
+{% endblock %}
