@@ -1,72 +1,72 @@
-Symfony Standard Edition
-========================
+Aurélie
+Cuny
+aurelie.cuny18@gmail.com
 
-Welcome to the Symfony Standard Edition - a fully-functional Symfony
-application that you can use as the skeleton for your new applications.
 
-For details on how to download and get started with Symfony, see the
-[Installation][1] chapter of the Symfony Documentation.
+Global : 
+   * création de la base de données avec doctrine en ligne de commande
+   * création des entities (avec des contraintes de validation) et form correspondant
+   * creations des controleurs pour chaque routes
+   * creation du services uploads de fichier pour les photo de profil de l'employee
+   * création des templates de pages d'erreur dans twigBundle
+   * service knp-paginator pour la pagination
+   * >>>>>service swiftmailer / "configuration du server mail" (pas vraiment configuré etant en local) 
+on peut décommenter la partie dans la projectDeleteAction pour avoir apercu du mail envoyer au propriétaire du site 
+   * réalisation de fixture pour peupler la BDD (les employees ont des image de profil par defaut) 
+   * ecriture de requete particuliere dans les Repositories
+   * action recherche 
 
-What's inside?
---------------
+Page d'acceuil :
+   * recupartion de valeur pour les afficher dans le tableau de bords
+	/!\ attention la page d'acceuil appele des requetes, et affiche les resultats il faut passer les fixtures avant car il y a un probleme si les resultats de requetes sont vides 
 
-The Symfony Standard Edition is configured with the following defaults:
+Métier : 
+   * liste des metiers avec une pagination 10 par page
+   * Possibilité de créer un métier a partir d'un formulaire
+   * Posibilité de le modifier a partir d'une meme formulaire pré remplis
+   * Suppression du métier uniquement si aucun employee lui est lié
+   * gestion des exception : 
+	+ impossible de supprimer un projet qui est lié a un employe
+	+ impossible de trouver le metier demander (pour les routes aved des id non presente en BDD) 
 
-  * An AppBundle you can use to start coding;
+Employee:
+   * liste des employees avec une pagination de 10 par page 
+   * possibilité d'ajout d'un employée en le liant a une entity métier grace un formulaire (avec ajout de photo) cette photo n'est pas obligatoire dans ce cas on utilise l'image par defaut present dans les asset (/web/uploads/images/default.jpg)
+   * possibilité de modifier un employe a l'aide d'un formaulre prérempli
+   * Archivage des employer possible depuis la liste + la feuille d'heure
+   * un employe est barré dans la liste des employee si il est archivé l'action d'archivage est irreversible (depuis l'application)
+   * un lien vers la feuille d'heure dans la liste
+   * gestion des Exception :
+	+ imposssible de trouver l'employee demandé
+	+ impossible de archiver un employee deja archiver
+	
 
-  * Twig as the only configured template engine;
+Feuille d'heure par employé : 
+   * Détail sur l'employee selectionné
+   * Possibité de modifier les information
+   * liste des jours de travail avec pagination 10 par page
+   * formulaire d'ajout des heures de travail formulaire avec requete pour recuperé uniquement les projet non livré.
+   * un employée archiver n'a pas acces a ce formulaire
+   * posibilité de supprimer le temps (si le projet est pas livré)
+   * gestion des exception :
+	+ impossible d'ajouter un temps de travail sur un projet déja livrer
+	+ impossible d'ajouter un temps de travail pour un employée archivé
+	+ impossible de supprimer un temps de travail si  le projet est deja livrer
+	+ impossible de supprimer un temps de travail si l'employée est archivé
 
-  * Doctrine ORM/DBAL;
+Projet :
+   * liste des projets avec pagination 10 par page
+   * creation de projet a partir de forulaire
+   * modification a pertir d'un formulaire preremplie
+   * action : livrer un projet boolean qui permet d'empecher la suppression et l'ajout de temps de travail..
+   *>> lors de la suppression : recuperer tout les données et les envoyés pa emails
+   * gestion des exception : 
+	+ impossible de modifier un projet deja livrer
+   	+ impossible de trouver le projet en bdd
 
-  * Swiftmailer;
 
-  * Annotations enabled for everything.
-
-It comes pre-configured with the following bundles:
-
-  * **FrameworkBundle** - The core Symfony framework bundle
-
-  * [**SensioFrameworkExtraBundle**][6] - Adds several enhancements, including
-    template and routing annotation capability
-
-  * [**DoctrineBundle**][7] - Adds support for the Doctrine ORM
-
-  * [**TwigBundle**][8] - Adds support for the Twig templating engine
-
-  * [**SecurityBundle**][9] - Adds security by integrating Symfony's security
-    component
-
-  * [**SwiftmailerBundle**][10] - Adds support for Swiftmailer, a library for
-    sending emails
-
-  * [**MonologBundle**][11] - Adds support for Monolog, a logging library
-
-  * **WebProfilerBundle** (in dev/test env) - Adds profiling functionality and
-    the web debug toolbar
-
-  * **SensioDistributionBundle** (in dev/test env) - Adds functionality for
-    configuring and working with Symfony distributions
-
-  * [**SensioGeneratorBundle**][13] (in dev env) - Adds code generation
-    capabilities
-
-  * [**WebServerBundle**][14] (in dev env) - Adds commands for running applications
-    using the PHP built-in web server
-
-  * **DebugBundle** (in dev/test env) - Adds Debug and VarDumper component
-    integration
-
-All libraries and bundles included in the Symfony Standard Edition are
-released under the MIT or BSD license.
-
-Enjoy!
-
-[1]:  https://symfony.com/doc/3.4/setup.html
-[6]:  https://symfony.com/doc/current/bundles/SensioFrameworkExtraBundle/index.html
-[7]:  https://symfony.com/doc/3.4/doctrine.html
-[8]:  https://symfony.com/doc/3.4/templating.html
-[9]:  https://symfony.com/doc/3.4/security.html
-[10]: https://symfony.com/doc/3.4/email.html
-[11]: https://symfony.com/doc/3.4/logging.html
-[13]: https://symfony.com/doc/current/bundles/SensioGeneratorBundle/index.html
-[14]: https://symfony.com/doc/current/setup/built_in_web_server.html
+Feuille d'heure par projet:
+   * Détail sur le projet 
+	+ requete pour calculer le cout total du projet 
+   * possibilité de modifier les informations si il est pas encore livré
+   * action pour livrer le projet passe le boolean a true
