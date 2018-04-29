@@ -57,10 +57,10 @@ class Employee
     private $metier;
 
     /**
-     * @var float
-     * @ORM\Column(name="cout", type="float")
+     * @var integer
+     * @ORM\Column(name="cout", type="integer")
      *
-     * @Assert\NotBlank()
+     * @Assert\Range(min="0", minMessage="La valeur doit être un nombre possitif")
      */
     private $cout;
 
@@ -87,8 +87,6 @@ class Employee
 
     /**
      * @ORM\Column(name="image", type="string")
-     *
-     * @Assert\NotBlank(message="Ajouter une image png")
      *
      * @Assert\File(mimeTypes={"image/png", "image/jpeg"})
      */
@@ -311,7 +309,7 @@ class Employee
     }
 
     public function __toString() {
-        return strtoupper($this->nom)." ".$this->prenom;
+        return strtoupper($this->nom)." ".ucfirst($this->prenom);
     }
 
 }

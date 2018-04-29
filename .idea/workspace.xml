@@ -2,32 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="419c2421-8721-43d6-aa92-ab07b2fdf6d8" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/README.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/deleteTime.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/sauvegarde.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/EventListener/ImageUploadListener.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/uploads/images/3e0b6b8f0854ad4b4da911208e6b0743.jpeg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/uploads/images/d30ccdd95e84aa65dc3d9e4d983289b6.jpeg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/uploads/images/desktop.ini" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/uploads/images/default.jpg" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/app/Resources/views/employee/details.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/employee/details.html.twig" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/employee/edit.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/employee/edit.html.twig" />
       <change beforePath="$PROJECT_DIR$/app/Resources/views/index.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/index.html.twig" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/job/index.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/job/index.html.twig" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/project/details.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/project/details.html.twig" />
-      <change beforePath="$PROJECT_DIR$/app/config/config.yml" afterPath="$PROJECT_DIR$/app/config/config.yml" />
-      <change beforePath="$PROJECT_DIR$/app/config/config_dev.yml" afterPath="$PROJECT_DIR$/app/config/config_dev.yml" />
-      <change beforePath="$PROJECT_DIR$/app/config/services.yml" afterPath="$PROJECT_DIR$/app/config/services.yml" />
-      <change beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
       <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" />
       <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/EmployeeController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/EmployeeController.php" />
       <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/JobController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/JobController.php" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/ProjectController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/ProjectController.php" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/DataFixtures/AppFixtures.php" afterPath="$PROJECT_DIR$/src/AppBundle/DataFixtures/AppFixtures.php" />
       <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Employee.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Employee.php" />
       <change beforePath="$PROJECT_DIR$/src/AppBundle/Form/EmployeeType.php" afterPath="$PROJECT_DIR$/src/AppBundle/Form/EmployeeType.php" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/ImageUpload.php" afterPath="$PROJECT_DIR$/src/AppBundle/ImageUpload.php" />
       <change beforePath="$PROJECT_DIR$/src/AppBundle/Repository/TimeTrackingRepository.php" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/TimeTrackingRepository.php" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/images/3e0b6b8f0854ad4b4da911208e6b0743.jpeg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/images/d30ccdd95e84aa65dc3d9e4d983289b6.jpeg" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -40,32 +27,10 @@
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ProjectController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ProjectController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="271" column="24" lean-forward="false" selection-start-line="271" selection-start-column="24" selection-end-line="271" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JobController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/JobController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="395">
-              <caret line="105" column="72" lean-forward="false" selection-start-line="105" selection-start-column="20" selection-end-line="105" selection-end-column="72" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>asset</find>
       <find>)}}</find>
       <find>ajo</find>
       <find>setEmb</find>
@@ -79,7 +44,6 @@
       <find>reche</find>
       <find>redi</find>
       <find>meti</find>
-      <find>tim</find>
       <find>dat</find>
       <find>det</find>
       <find>re</find>
@@ -95,6 +59,8 @@
       <find>asser</find>
       <find>#</find>
       <find>im</find>
+      <find>tim</find>
+      <find>topempl</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -124,7 +90,6 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Form/ProjectType.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/project/index.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/job/index.html.twig" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/JobController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/deteleTime.html.twig" />
         <option value="$PROJECT_DIR$/app/config/config_dev.yml" />
         <option value="$PROJECT_DIR$/app/Resources/views/sauvegarde.html.twig" />
@@ -135,15 +100,17 @@
         <option value="$PROJECT_DIR$/app/config/config.yml" />
         <option value="$PROJECT_DIR$/app/config/services.yml" />
         <option value="$PROJECT_DIR$/app/Resources/views/employee/edit.html.twig" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Form/EmployeeType.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/ImageUpload.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Repository/TimeTrackingRepository.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/ProjectController.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/JobController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/employee/details.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/EmployeeController.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Employee.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Form/EmployeeType.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Repository/TimeTrackingRepository.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/DataFixtures/AppFixtures.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/ProjectController.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Employee.php" />
       </list>
     </option>
   </component>
@@ -200,9 +167,10 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="800" />
-    <option name="width" value="800" />
-    <option name="height" value="860" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="805" />
+    <option name="height" value="876" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -248,6 +216,27 @@
               <item name="Procost" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="AppBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="Procost" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Procost" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="AppBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Controller" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="Procost" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Procost" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="AppBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="DataFixtures" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="Procost" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Procost" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="AppBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Entity" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="Procost" type="b2602c69:ProjectViewProjectNode" />
@@ -322,7 +311,7 @@
       <workItem from="1524467390864" duration="12308000" />
       <workItem from="1524566514690" duration="21402000" />
       <workItem from="1524650511906" duration="13863000" />
-      <workItem from="1524759051969" duration="39807000" />
+      <workItem from="1524759051969" duration="52530000" />
     </task>
     <task id="LOCAL-00001" summary="Git init">
       <created>1524687277852</created>
@@ -331,11 +320,18 @@
       <option name="project" value="LOCAL" />
       <updated>1524687277852</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Reste fixture + finir de commenter + assert">
+      <created>1524984365929</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1524984365929</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="169288000" />
+    <option name="totallyTimeSpent" value="182011000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -369,7 +365,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Git init" />
-    <option name="LAST_COMMIT_MESSAGE" value="Git init" />
+    <MESSAGE value="Reste fixture + finir de commenter + assert" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reste fixture + finir de commenter + assert" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -479,36 +476,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/DataFixtures/AppFixtures.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="19" column="29" lean-forward="true" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/job/edit.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="39" lean-forward="true" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Project.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="613">
-          <caret line="236" column="0" lean-forward="false" selection-start-line="236" selection-start-column="0" selection-end-line="236" selection-end-column="0" />
-          <folding>
-            <element signature="e#36#68#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/TimeTracking.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-240">
-          <caret line="16" column="42" lean-forward="false" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -550,22 +521,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="748">
           <caret line="47" column="38" lean-forward="false" selection-start-line="47" selection-start-column="38" selection-end-line="47" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/ProjectType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="32" column="14" lean-forward="false" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Job.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="65" column="4" lean-forward="false" selection-start-line="65" selection-start-column="4" selection-end-line="67" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -684,55 +639,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/EmployeeType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="33" column="81" lean-forward="false" selection-start-line="33" selection-start-column="81" selection-end-line="33" selection-end-column="81" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/employee/edit.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1067">
-          <caret line="70" column="26" lean-forward="false" selection-start-line="70" selection-start-column="26" selection-end-line="70" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="97" column="135" lean-forward="false" selection-start-line="97" selection-start-column="135" selection-end-line="97" selection-end-column="135" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/TimeTrackingRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="71" column="81" lean-forward="false" selection-start-line="71" selection-start-column="81" selection-end-line="71" selection-end-column="81" />
-          <folding>
-            <marker date="1524980753844" expanded="true" signature="411:472" ph="SELECT SUM (... AppBundle" />
-            <marker date="1524980753844" expanded="true" signature="734:815" ph="SELECT SUM (... AppBundle" />
-            <marker date="1524980753844" expanded="true" signature="734:826" ph="SELECT SUM (... AppBundle" />
-            <marker date="1524980753844" expanded="true" signature="1039:1209" ph="SELECT sum(u... AppBundle" />
-            <marker date="1524980753844" expanded="true" signature="1039:1219" ph="SELECT sum(u... AppBundle" />
-            <marker date="1524980753844" expanded="true" signature="1560:1809" ph="SELECT 0 as AppBundle" />
-            <marker date="1524980753844" expanded="true" signature="1989:2230" ph="SELECT SUM (... AppBundle" />
-            <marker date="1524980753844" expanded="true" signature="2865:3068" ph="SELECT SUM(u... AppBundle" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/employee/details.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="121" lean-forward="false" selection-start-line="18" selection-start-column="121" selection-end-line="18" selection-end-column="121" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/config/config.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -749,34 +655,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Employee.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="98" column="5" lean-forward="false" selection-start-line="98" selection-start-column="5" selection-end-line="98" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="579">
-          <caret line="154" column="0" lean-forward="true" selection-start-line="154" selection-start-column="0" selection-end-line="154" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/EmployeeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-520">
-          <caret line="149" column="34" lean-forward="false" selection-start-line="149" selection-start-column="34" selection-end-line="149" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/JobController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="105" column="72" lean-forward="false" selection-start-line="105" selection-start-column="20" selection-end-line="105" selection-end-column="72" />
+        <state relative-caret-position="357">
+          <caret line="37" column="39" lean-forward="false" selection-start-line="37" selection-start-column="39" selection-end-line="37" selection-end-column="39" />
           <folding />
         </state>
       </provider>
@@ -786,6 +668,121 @@
         <state relative-caret-position="272">
           <caret line="271" column="24" lean-forward="false" selection-start-line="271" selection-start-column="24" selection-end-line="271" selection-end-column="24" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/EmployeeType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="32" column="131" lean-forward="false" selection-start-line="32" selection-start-column="131" selection-end-line="32" selection-end-column="131" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/TimeTracking.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="16" column="42" lean-forward="false" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/employee/edit.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="70" column="26" lean-forward="false" selection-start-line="70" selection-start-column="26" selection-end-line="70" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/employee/details.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="70" lean-forward="false" selection-start-line="18" selection-start-column="70" selection-end-line="18" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Job.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1089">
+          <caret line="65" column="4" lean-forward="false" selection-start-line="65" selection-start-column="4" selection-end-line="67" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="466">
+          <caret line="111" column="42" lean-forward="false" selection-start-line="111" selection-start-column="42" selection-end-line="111" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/EmployeeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1309">
+          <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+          <folding>
+            <element signature="e#40#97#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Project.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2370">
+          <caret line="236" column="0" lean-forward="false" selection-start-line="236" selection-start-column="0" selection-end-line="236" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/ProjectType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="23" column="29" lean-forward="false" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/DataFixtures/AppFixtures.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="647">
+          <caret line="72" column="41" lean-forward="false" selection-start-line="72" selection-start-column="41" selection-end-line="72" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="61" column="47" lean-forward="false" selection-start-line="61" selection-start-column="47" selection-end-line="61" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Employee.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="311" column="64" lean-forward="false" selection-start-line="311" selection-start-column="64" selection-end-line="311" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/TimeTrackingRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="409">
+          <caret line="79" column="27" lean-forward="false" selection-start-line="79" selection-start-column="27" selection-end-line="79" selection-end-column="27" />
+          <folding>
+            <marker date="1525007013532" expanded="true" signature="411:472" ph="SELECT SUM (... AppBundle" />
+            <marker date="1525007013532" expanded="true" signature="734:815" ph="SELECT SUM (... AppBundle" />
+            <marker date="1525007013532" expanded="true" signature="734:826" ph="SELECT SUM (... AppBundle" />
+            <marker date="1525007013532" expanded="true" signature="1039:1209" ph="SELECT sum(u... AppBundle" />
+            <marker date="1525007013532" expanded="true" signature="1039:1219" ph="SELECT sum(u... AppBundle" />
+            <marker date="1525007013532" expanded="true" signature="1560:1809" ph="SELECT 0 as AppBundle" />
+            <marker date="1525007013532" expanded="true" signature="1990:2231" ph="SELECT SUM (... AppBundle" />
+            <marker date="1525007013532" expanded="true" signature="2905:3108" ph="SELECT SUM(u... AppBundle" />
+          </folding>
         </state>
       </provider>
     </entry>

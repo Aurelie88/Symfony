@@ -32,10 +32,12 @@ class DefaultController extends Controller
         //recuperation des valeur pour remplir les graph et tableau
         $em= $this->getDoctrine()->getManager()->getRepository('AppBundle:Project');
         //requetes speciale ecrite dans ProjectRepository
+
         $nbProjetR=$em->nombreProjetRealisation();
         $nbProjetL=$em->nombreProjetLivree();
         $nbProjetCapex=$em->nombreProjetCapex();
         $nbProjetOpex=$em->nombreProjetOpex();
+
         $em= $this->getDoctrine()->getManager()->getRepository('AppBundle:Employee');
         //requetes speciale ecrite dans EmployeeRepository
         $nombreEmployee=$em->nombreEmployee();
@@ -43,12 +45,13 @@ class DefaultController extends Controller
         $tempsProduction=$em->findAll();
         //requetes speciale ecrite dans TimeTrackingRepository
         $nombreJour= $em->nombreJourProduction();
-        $classement = $em->classementEmployee();
+        $topEmployee = $em->classementEmployee();
         $project=$em->coutTotalProjet();
 
         //retourne la vue avec toute les données utile aux tableau de bord
         return $this->render('index.html.twig',
             array(
+
                 'nombreProjetR' => $nbProjetR[0]['nombre'],
                 'nombreProjetL' => $nbProjetL[0]['nombre'],
                 'nombreProjetCapex' => $nbProjetCapex[0]['nombre'],
@@ -56,7 +59,7 @@ class DefaultController extends Controller
                 'nombreEmployee' => $nombreEmployee[0]['nombre'],
                 'listeProject' => $project,
                 'nombreJour' => $nombreJour[0]['nombre'],
-                'topEmployee' => $classement[0],
+                'topEmployee' => $topEmployee[0],
                 'tempsProduction' => $tempsProduction
             ));
     }

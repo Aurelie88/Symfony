@@ -128,6 +128,10 @@ class EmployeeController extends Controller
             $em= $this->getDoctrine()->getManager();
             //on met a false pour dire qu'a sa création l'employe n'est pas encore archivé
             $employee->setArchive(false);
+
+            if($employee->getImage()==null){
+                $employee->setImage('default.jpg');
+            }
             //ajout de l'employee en bdd
             $em->persist($employee);
             $em->flush();
@@ -159,9 +163,14 @@ class EmployeeController extends Controller
 
         //si le formulaire est soumis et valide
         if($form->isSubmitted() && $form->isValid() ){
-            //on enregistre la modification en bdd
-            $em= $this->getDoctrine()->getManager();
 
+            $em= $this->getDoctrine()->getManager();
+            //si il l'utilisateur n'a pas selectionné d'image
+            if($employee->getImage()==null){
+                //on met une image par defaut (deja presente dans les asssets)
+                $employee->setImage('default.jpg');
+            }
+            //on enregistre la modification en bdd
             $em->persist($employee);
             $em->flush();
 

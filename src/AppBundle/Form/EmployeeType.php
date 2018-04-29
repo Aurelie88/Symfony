@@ -30,8 +30,8 @@ class EmployeeType extends AbstractType
             'label' => 'Attribuer un métier à l\'utilisateur',
         ));
         $builder->add('cout',IntegerType::class, array('label' => 'Coût journalier'));
-        $builder->add('embauche', DateType::class, array('label' => 'Date d\'embauche'));
-        $builder->add('image', FileType::class, array('label' => 'image (PNG)'));
+        $builder->add('embauche', DateType::class, array('label' => 'Date d\'embauche', 'data' => new \DateTime(), 'format' => 'dd/MM/yyyy'));
+        $builder->add('image', FileType::class, array('label' => 'image (PNG)', 'required'  => false));
     }
 
     public function getName(){

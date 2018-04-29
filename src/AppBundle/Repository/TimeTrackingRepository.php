@@ -46,6 +46,7 @@ class TimeTrackingRepository extends \Doctrine\ORM\EntityRepository
             ');
         $results = $query->getResult();
 
+
         //requete qui calcul le cout des projet qui ont des temps de production
         $query = $this->_em->createQuery("SELECT SUM (e.cout*u.nbJour) as coutTotal, p as projet
             FROM AppBundle:TimeTracking u, AppBundle:Employee e, AppBundle:Project p
@@ -58,11 +59,14 @@ class TimeTrackingRepository extends \Doctrine\ORM\EntityRepository
             $results[]=$value;
         }
 
+        if($results!=null){
         //permet de faire un trie sur le tableau a partir de la date (du plus recent au plus vieux)
         foreach ($results as $key =>$row){
             $date[$key]= $row['projet']->getDateCreation();
         }
+
         array_multisort($date, SORT_DESC, $results);
+        }
         //on affiche les resultats
         return $results;
     }
