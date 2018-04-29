@@ -29,6 +29,10 @@ class JobController extends Controller
     {
         $em= $this->getDoctrine()->getManager()->getRepository('AppBundle:Job');
         $job=$em->findAll();
+
+        $paginator= $this->get('knp_paginator');
+        $job=$paginator->paginate($job, $request->query->get('page', 1),10);
+
         return $this->render('job/index.html.twig', array('job' => $job));
     }
 

@@ -20,6 +20,7 @@ class Employee
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
+     *
      */
     private $id;
 
@@ -27,18 +28,24 @@ class Employee
      * @var string
      *
      * @ORM\Column(name="prenom", type="string", length=255)
+     *
+     * @Assert\NotBlank()
      */
     private $prenom;
 
     /**
      * @var string
      * @ORM\Column(name="nom", type="string", length=255)
+     *
+     * @Assert\NotBlank()
      */
     private $nom;
 
     /**
      * @var string
      * @ORM\Column(name="email", type="string", length=255)
+     *
+     * @Assert\Email(message="L'email {{ value }} n'est pas valide.", checkMX=true)
      */
     private $email;
 
@@ -52,6 +59,8 @@ class Employee
     /**
      * @var float
      * @ORM\Column(name="cout", type="float")
+     *
+     * @Assert\NotBlank()
      */
     private $cout;
 
@@ -59,6 +68,7 @@ class Employee
      * @var \DateTime
      *
      * @ORM\Column(name="embauche", type="datetime")
+     *
      */
     private $embauche;
 
@@ -66,6 +76,7 @@ class Employee
      * @var bool
      *
      * @ORM\Column(name="archive", type="boolean")
+     *
      */
     private $archive;
 
@@ -74,6 +85,23 @@ class Employee
      */
     private $timeTrackings;
 
+    /**
+     * @ORM\Column(name="image", type="string")
+     *
+     * @Assert\NotBlank(message="Ajouter une image png")
+     *
+     * @Assert\File(mimeTypes={"image/png", "image/jpeg"})
+     */
+    private $image;
+
+    public function getImage(){
+        return $this->image;
+    }
+
+    public function setImage($image){
+        $this->image=$image;
+        return $this;
+    }
     public function __construct()
     {
         $this->timeTrackings = new ArrayCollection();

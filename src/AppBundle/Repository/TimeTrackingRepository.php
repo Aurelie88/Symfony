@@ -10,17 +10,21 @@ namespace AppBundle\Repository;
  */
 class TimeTrackingRepository extends \Doctrine\ORM\EntityRepository
 {
+    //requete pour extraire le nombre de jour total travailler par l'entreprise
     public function nombreJourProduction(){
         $query = $this->_em->createQuery('SELECT SUM (u.nbJour) as nombre FROM AppBundle:TimeTracking u');
         $results = $query->getResult();
         return $results;
     }
 
+    //requete qui calcul le nombre de jour,total travailler par l'employee demandé
     public function nombreJourProductionEmployee($employee){
-        $query = $this->_em->createQuery('SELECT SUM (u.nbJour) as nombre FROM AppBundle:TimeTracking u WHERE u.idEmployee=$employee');
+        $query = $this->_em->createQuery('SELECT SUM (u.nbJour) as nombre FROM AppBundle:TimeTracking u WHERE u.idEmployee='.$employee);
         $results = $query->getResult();
         return $results;
     }
+
+    //requete qui permet de calculr le cout du projet
     public function coutProjet($project){
         $query = $this->_em->createQuery('SELECT SUM(e.cout*u.nbJour) as coutTotal
             FROM AppBundle:TimeTracking u, AppBundle:Employee e
@@ -30,16 +34,40 @@ class TimeTrackingRepository extends \Doctrine\ORM\EntityRepository
         return $results;
     }
 
+    //requete permettant de calculer le prix de chaque projet
     public function coutTotalProjet(){
-        $query = $this->_em->createQuery('SELECT SUM (e.cout*u.nbJour) as coutTotal, p as projet
-            FROM AppBundle:TimeTracking u,AppBundle:Employee e, AppBundle:Project p
+        //requete permettanant de mettre le cout a 0 pour les projets qui n'ont pas encore de temps de production
+        $query = $this->_em->createQuery('SELECT 0 as coutTotal, p as projet
+            FROM AppBundle:Project p
+            WHERE p.id NOT IN(
+              SELECT IDENTITY(u.idProject)
+              FROM AppBundle:TimeTracking u, AppBundle:Project a 
+              WHERE u.idProject=a.id)
+            ');
+        $results = $query->getResult();
+
+        //requete qui calcul le cout des projet qui ont des temps de production
+        $query = $this->_em->createQuery("SELECT SUM (e.cout*u.nbJour) as coutTotal, p as projet
+            FROM AppBundle:TimeTracking u, AppBundle:Employee e, AppBundle:Project p
             WHERE u.idEmployee=e.id
             AND u.idProject=p.id
-            GROUP BY u.idProject');
-        $results = $query->getResult();
+            GROUP BY u.idProject");
+        $resultats=$query->getResult();
+        //on fussionne les 2 tableaux de resultats
+        foreach ($resultats as $value){
+            $results[]=$value;
+        }
+
+        //permet de faire un trie sur le tableau a partir de la date (du plus recent au plus vieux)
+        foreach ($results as $key =>$row){
+            $date[$key]= $row['projet']->getDateCreation();
+        }
+        array_multisort($date, SORT_DESC, $results);
+        //on affiche les resultats
         return $results;
     }
 
+    //retoune le clssement des employees
     public function classementEmployee(){
         $query = $this->_em->createQuery('SELECT SUM(u.nbJour*e.cout) as total, u as employee
         FROM AppBundle:TimeTracking u, AppBundle:Employee e 
@@ -66,3 +94,24 @@ Where time_tracking.id_employee_id=employee.id
 AND time_tracking.id_project_id=project.id
 GROUP BY id_project_id
 ORDER BY dateCreation DESC*/
+
+
+/*SELECT 0 as coutTotal, p as projet
+            FROM AppBundle:Project p
+            WHERE p.id NOT IN(
+              SELECT u.idProject
+              FROM AppBundle:TimeTracking u)
+            UNION
+            SELECT SUM (e.cout*u.nbJour) as coutTotal, p as projet
+            FROM AppBundle:TimeTracking u, AppBundle:Employee e, AppBundle:Project p
+            WHERE u.idEmployee=e.id
+            AND u.idProject=p.id
+            GROUP BY u.idProject
+            ORDER BY p.dateCreation*/
+
+/*SELECT SUM (e.cout*u.nbJour) as coutTotal, b as projet
+            FROM AppBundle:TimeTracking u, AppBundle:Employee e, AppBundle:Project b
+            WHERE u.idEmployee=e.id
+            AND u.idProject=b.id
+            GROUP BY u.idProject
+            ORDER BY b.dateCreation*/

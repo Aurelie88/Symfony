@@ -1,0 +1,52 @@
+<html>
+<head>
+    <link href="{{ asset('css/bootstrap.css')}}" rel="stylesheet">
+</head>
+<body>
+
+<section id="container">
+<h1>Fichier de sauvegarde automatique du projet {{ project.titre }}</h1>
+    <section id="main-content">
+        <section class="wrapper">
+<div class="row">
+    <div class="col-lg-4">
+                <table class="table table-bordered table-striped table-condensed">
+                    <tbody>
+                    <tr><th>Titre</th><td>{{ project.titre }}</td></tr>
+                    <tr><th>Type</th><td>{{ project.typeProjet }}</td></tr>
+                    <tr><th>Date de création</th><td>{{ project.dateCreation|date("d/m/Y") }}</td></tr>
+                    <tr><th>Description</th><td>{{ project.description }}</td></tr>
+                    <tr><th>Cout total du projet</th><td>{{ cout }}</td></tr>
+                    </tbody>
+                </table>
+    </div>
+    <div class="col-lg-6 main-chart">
+        <h4>Historique des temps de production :</h4>
+        <table class="table table-bordered table-striped table-condensed">
+            <thead>
+            <tr>
+                <th>Employee</th>
+                <th>Temps</th>
+                <th>Date de saisie</th>
+                <th>Coût total</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for time in temps %}
+                <tr>
+                    <th>{{ time.idEmployee }}</th>
+                    <th>{{ time.nbJour }} j</th>
+                    <th>23/03/2018</th>
+                    <th>{{ time.nbJour*time.idEmployee.cout }}</th>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+        </section>
+    </section>
+</section>
+
+</body>
+</html>

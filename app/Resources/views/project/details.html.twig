@@ -8,7 +8,7 @@
         <section class="wrapper">
 
             <h3><i class="fa fa-angle-right"></i> Suivi du projet "{{ project.titre }}"</h3>
-            {{ dump(cout) }}
+            {#{ dump(cout) }#}
             <div class="row">
                 <div class="col-lg-5">
                     <div class="row">
@@ -22,8 +22,11 @@
                                 <tr><th>Cout total du projet</th><td>{{ cout }}</td></tr>
                                 </tbody>
                             </table>
-                            <a class="btn btn-success btn-sm" href="#">Modifier</a>
-                            <a class="btn btn-primary btn-sm" href="#">Livrer</a>
+                            {% if project.delivery==0 %}
+                            <a class="btn btn-success btn-sm" href="{{ path('project_edit', {'id' : project.id}) }}">Modifier</a>
+                            <a class="btn btn-primary btn-sm" href="{{ path('delivery', {'id' : project.id}) }}">Livrer</a>
+                            <a class="btn btn-danger btn-sm" href="{{ path('project_delete', {'id' : project.id}) }}">Supprimer</a>
+                            {% endif %}
                         </div>
                     </div>
                     <div class="row">
@@ -62,7 +65,9 @@
                             <th>Temps</th>
                             <th>Date de saisie</th>
                             <th>Coût total</th>
+                            {% if project.delivery==0 %}
                             <th>Actions</th>
+                            {% endif %}
                         </tr>
                         </thead>
                         <tbody>
@@ -72,11 +77,13 @@
                                 <th>{{ time.nbJour }} j</th>
                                 <th>23/03/2018</th>
                                 <th>{{ time.nbJour*time.idEmployee.cout }}</th>
+                                {% if project.delivery==0 %}
                                 <th>
-                                    <a href="#" class="btn btn-danger btn-xs">
+                                    <a href="{{ path('project_delete_time', {'id': time.id}) }}" class="btn btn-danger btn-xs">
                                         <i class="fa fa-trash-o"></i>
                                     </a>
                                 </th>
+                                {% endif %}
                             </tr>
                         {% endfor %}
                         </tbody>

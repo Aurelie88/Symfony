@@ -11,7 +11,6 @@ class="active"
     <!--main content start-->
     <section id="main-content">
         <section class="wrapper">
-{{ dump(tempsProduction) }}
             <div class="row">
                 <div class="col-lg-9 main-chart">
 
@@ -96,7 +95,7 @@ class="active"
                                     <h5>TOP EMPLOYE</h5>
                                 </div>
                                 <p>
-                                    <img src="{{ asset('img/ui-zac.jpg')}}" class="img-circle" width="80">
+                                    <img src="{{ asset('uploads/images/' ~ topEmployee.employee.idEmployee.image) }}" class="img-circle" width="80">
                                 </p>
                                 <p>
                                     <b>{{ topEmployee.employee.idEmployee }}</b>
@@ -131,23 +130,23 @@ class="active"
                                 </tr>
                                 </thead>
                                 <tbody>
-                                {# %  for projet in listeProject %}
+                                {%  for projet in listeProject %}
                                 <tr>
                                     <th>
-                                        <a href="#">{{ projet.projet.titre }}</a>
+                                        <a href="{{ path('project_detail', {'id': projet.projet.id}) }}">{{ projet.projet.titre }}</a>
                                     </th>
-                                    <th>{{  projet.projet.typeProjet }}</th>
-                                    <th>18/03/2018</th>
-                                    <th>3 200 €</th>
+                                    <th>{{ projet.projet.typeProjet }}</th>
+                                    <th>{{ projet.projet.dateCreation|date("d/m/Y") }}</th>
+                                    <th>{{ projet.coutTotal }} €</th>
                                     <th>
                                         {% if projet.projet.delivery==1 %}
-                                        <span class="label label-success label-mini">OUI</span>
-                                            {% else %}
-                                        <span class="label label-danger label-mini">NON</span>
-                                                {% endif %}
+                                            <span class="label label-success label-mini">OUI</span>
+                                        {% else %}
+                                            <span class="label label-danger label-mini">NON</span>
+                                        {% endif %}
                                     </th>
                                 </tr>
-                               {% endfor %}#}
+                               {% endfor %}
                                 </tbody>
                             </table>
                         </div>

@@ -1,0 +1,17 @@
+{%  extends "base.html.twig" %}
+
+{% block body_content %}
+    <section id="main-content">
+        <section class="wrapper">
+
+            <h3><i class="fa fa-angle-right"></i> Supppression d'un temps de production</h3>
+            <form action="" method="post">
+                Etes vous sure de vouloir supprimer les {{ temps.nbJour }} jours de travail de l'employee {{ temps.idEmployee }} sur le projet {{ temps.idProject }} "?
+                <div class="form-group">
+                    <input type="submit" class="btn btn-danger" name="del" value="Oui">
+                    <input type="submit" class="btn btn-success" name="del" value="Non">
+                </div>
+            </form>
+        </section>
+    </section>
+{% endblock %}

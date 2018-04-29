@@ -36,3 +36,14 @@ services:
     AppBundle\DataFixtures\:
       resource: '../../src/AppBundle/DataFixtures'
       tags: ['doctrine.fixture.orm']
+
+    employee.image_uploader:
+      class: AppBundle\ImageUpload
+      arguments: ['%images_directory%']
+
+    employee.doctrine_image_listener:
+      class: AppBundle\EventListener\ImageUploadListener
+      arguments: ['@employee.image_uploader']
+      tags:
+        - { name: doctrine.event_listener, event: prePersist }
+        - { name: doctrine.event_listener, event: preUpdate }

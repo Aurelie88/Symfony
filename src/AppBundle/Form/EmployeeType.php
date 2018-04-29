@@ -4,6 +4,7 @@ namespace AppBundle\Form;
 
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
 
 use Symfony\Component\Form\Extension\Core\Type\DateType;
@@ -30,7 +31,7 @@ class EmployeeType extends AbstractType
         ));
         $builder->add('cout',IntegerType::class, array('label' => 'Coût journalier'));
         $builder->add('embauche', DateType::class, array('label' => 'Date d\'embauche'));
-
+        $builder->add('image', FileType::class, array('label' => 'image (PNG)'));
     }
 
     public function getName(){
